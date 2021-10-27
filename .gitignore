@@ -1,0 +1,16 @@
+**/build
+**/html
+**/dist
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+**/nbproject/private
+**/.generated_files
+*.d
+*.pre
+*.p1
+*.lst
+*.sym
+*.obj
+*.o
+*.sdb
+*.obj.dmp
