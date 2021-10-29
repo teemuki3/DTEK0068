@@ -1,8 +1,8 @@
 /*
  * File:   main.c
- * Author: jasata@utu.fi
+ * Author: teantm@utu.fi
  *
- * Created on July 29, 2020, 11:16 AM
+ * Created on October 29, 2021, 15:00
  * Simple LED blinking application for testing that the ATmega4809 PCB
  * can be programmed with the course specific virtual machine.
  */
@@ -16,13 +16,14 @@ int main(void)
 {
     // Set PF5 (LED) as out
     PORTF.DIRSET = PIN5_bm;
-
+    
     // The superloop
     while (1)
     {
         // Toggle LED ON/OFF every 1/2 seconds
         _delay_ms(500);
         PORTF.OUTTGL = PIN5_bm;
+     
     }
 }
 
