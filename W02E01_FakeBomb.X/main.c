@@ -30,6 +30,7 @@ int main(void)
     PORTA.DIRCLR = PIN4_bm; // Set PA4 (Red wire) as in 
     
     // Define different led configurations for displaying numbers 0-9
+    // 8 bits representing the states of 8 pins
     uint8_t led_configurations[] =     
     {
         0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110,
