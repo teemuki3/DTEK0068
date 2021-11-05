@@ -14,8 +14,9 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-int g_running = 1;
+volatile int g_running = 1;
 
+// This interrupt occurs when the red wire is cut
 ISR(PORTA_PORT_vect)
 {
     // Clear interrupt flags
