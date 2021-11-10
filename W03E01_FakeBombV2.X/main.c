@@ -22,7 +22,7 @@ ISR(RTC_PIT_vect)
 {
     // Clear interrupt flags
     RTC.PITINTFLAGS = RTC_PI_bm;
-    // Advance clockticks variable and reset it every time it reaches 8
+    // Increase clockticks variable and reset it every time it reaches 8
     // (meaning that a full second has passed)
     g_clockticks = (++g_clockticks) % 8;
 }
