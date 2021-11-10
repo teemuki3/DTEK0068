@@ -74,10 +74,7 @@ void rtc_init(void)
     
     /* 32.768kHz External Crystal Oscillator (XOSC32K) */
     RTC.CLKSEL = RTC_CLKSEL_TOSC32K_gc;
-    
-    /* Run in debug: enabled */
-    RTC.DBGCTRL = RTC_DBGRUN_bm;
-    
+        
     RTC.PITINTCTRL = RTC_PI_bm; /* Periodic Interrupt: enabled */
     
     RTC.PITCTRLA = RTC_PERIOD_CYC4096_gc /* RTC Clock Cycles 4096 */
