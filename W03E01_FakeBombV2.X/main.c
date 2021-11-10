@@ -110,7 +110,7 @@ int main(void)
     while(1) 
     {   
         // Check if the countdown is still running 
-        // and it's also time to advance the timer
+        // and it's also time to advance the countdown timer
         if (g_running && (g_clockticks == 0))
         {
             // Display the next number
