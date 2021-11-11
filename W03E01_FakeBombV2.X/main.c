@@ -22,9 +22,10 @@ ISR(RTC_PIT_vect)
 {
     // Clear interrupt flags
     RTC.PITINTFLAGS = RTC_PI_bm;
-    // Increase clockticks variable and reset it every time it reaches 8
-    // (meaning that a full second has passed)
-    g_clockticks = (++g_clockticks) % 8;
+    // Increase clockticks variable by 32 so that after 8 times it reaches 256
+    // which wraps around back to 0, signalling the superloop
+    // that a full second has passed since the last 0 value
+    g_clockticks = g_clockticks + 32;
 }
 
 // This interrupt occurs when the red wire is cut
@@ -121,6 +122,8 @@ int main(void)
             if (number == 0)
             {
                 g_running = 0;
+                // Also disable input from red wire
+                PORTA.DIRSET = PIN4_bm; 
             }
         }
         
